@@ -14,8 +14,8 @@ public class Dish {
     private double price;
     private Long amount;
     private String description;
-    @ManyToOne
-    @JoinColumn(name = "cart_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cart_id", nullable = false)
     private Cart cart;
 
     public Dish() {

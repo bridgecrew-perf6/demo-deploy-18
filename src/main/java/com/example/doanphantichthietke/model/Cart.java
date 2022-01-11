@@ -16,14 +16,12 @@ public class Cart {
     private String addressClientCreated;
     private String status;
     private String reviewCustomer;
-    @OneToMany(targetEntity = Dish.class)
-    private List<Dish> dishes;
 
     public Cart() {
     }
 
     public Cart(Long id, LocalDateTime dateCreated, String nameClientCreated, String numberContactClientCreated,
-                String addressClientCreated, String status, String reviewCustomer, List<Dish> dishes) {
+                String addressClientCreated, String status, String reviewCustomer) {
         this.id = id;
         this.dateCreated = dateCreated;
         this.nameClientCreated = nameClientCreated;
@@ -31,7 +29,6 @@ public class Cart {
         this.addressClientCreated = addressClientCreated;
         this.status = status;
         this.reviewCustomer = reviewCustomer;
-        this.dishes = dishes;
     }
 
     public Long getId() {
@@ -82,13 +79,6 @@ public class Cart {
         this.status = status;
     }
 
-    public List<Dish> getDishes() {
-        return dishes;
-    }
-
-    public void setDishes(List<Dish> dishes) {
-        this.dishes = dishes;
-    }
 
     public String getReviewCustomer() {
         return reviewCustomer;
